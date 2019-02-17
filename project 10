@@ -1,0 +1,14 @@
+#PROJECT 10
+import urllib2
+a=raw_input("GIVE A URL: ")
+response = urllib2.urlopen(a)
+html = response.read()
+b=html.rsplit("</head>")
+b.pop(0)
+f=str(b)
+p=f.count("</p>")
+r=f.count("<br>")
+l=f.count("</a>")
+r=p + r
+print "LINKS: " + str(l)
+print "LINE CHANGES: " + str(r)
