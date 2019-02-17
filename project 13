@@ -1,0 +1,20 @@
+#PROJECT 13
+def maxDistance(a,b):    
+    MAX=-1
+    c=len(a)
+    a.sort()
+    a.reverse()
+    for i in range(c):
+        if a[i]<b:
+            max=a[i]
+            for j in range(i + 1, c):
+                if max + a[j] < b:
+                    max=max + a[j]
+                else:
+                    if a[i] + a[j] < b and a[i] + a[j] > max:
+                        max=a[i] + a[j]
+            if max > MAX:
+                MAX=max
+    if MAX==-1:
+       MAX="invalid input"
+    return MAX
