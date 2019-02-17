@@ -1,0 +1,34 @@
+#PROJECT 9
+def maxSequence(a):
+    f=[]
+    y=[]
+    s=[]
+    b=len(a)
+    for i in range(b):
+        if i==0:
+            d=b-1
+        else:
+            d=b
+        while d>i:
+            for k in range (i,d):
+                f.append(a[k])
+            y.append(f)
+            f=[]
+            d=d-1
+    for i in y:
+        sum=0
+        k=len(i)
+        for j in range (k):
+            sum=sum + i[j]
+        s.append(sum)
+    z=len(s)
+    for i in range(z):
+        if i==0:
+            max=s[i]
+        else:
+             if s[i] > max:
+                 max=s[i]
+                 p=i
+    list=y[p]
+    response=str(max) + ":" + str(list)
+    return response
